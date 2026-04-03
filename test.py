@@ -120,7 +120,15 @@ st.markdown("<h2>Confirmar asistencia</h2>", unsafe_allow_html=True)
 
 nombre = st.text_input("Nombre y apellido")
 asistencia = st.selectbox("¿Asistís?", ["Sí", "No"])
-personas = st.number_input("¿Cuántas personas vienen?", min_value=1, step=1)
+
+col1, col2 = st.columns(2)
+with col1:
+    adultos = st.number_input("Adultos", min_value=0, step=1)
+with col2:
+    ninos = st.number_input("Niñes", min_value=0, step=1)
+
+restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
+coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
 
 # --- DATA ACTUAL ---
 data = sheet.get_all_records()
@@ -130,6 +138,7 @@ def ya_existe(nombre):
     if df.empty:
         return False
     return nombre.lower().strip() in df["Nombre"].astype(str).str.lower().str.strip().values
+
 
 if st.button("Confirmar asistencia"):
 
@@ -143,9 +152,13 @@ if st.button("Confirmar asistencia"):
         sheet.append_row([
             nombre,
             asistencia,
-            personas,
-            datetime.now().strftime("%Y-%m-%d %H:%M")
+            adultos,
+            ninos,
+            datetime.now().strftime("%Y-%m-%d %H:%M"),
+            restriccion,
+            coche
         ])
+
         st.success("💖 ¡Gracias por confirmar! Te esperamos")
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
