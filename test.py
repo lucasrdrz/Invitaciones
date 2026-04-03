@@ -104,8 +104,8 @@ Podés ayudarnos con nuestra luna de miel ✈️
 </p>
 """, unsafe_allow_html=True)
 
-CBU = "0000003100000000000000"
-ALIAS = "flor.lucas.casamiento"
+CBU = "0720176588000026340436"
+ALIAS = "CAMI.GABI.MACA"
 
 st.markdown(f'<p class="center"><b>CBU:</b> {CBU}</p>', unsafe_allow_html=True)
 st.markdown(f'<p class="center"><b>Alias:</b> {ALIAS}</p>', unsafe_allow_html=True)
@@ -125,7 +125,7 @@ col1, col2 = st.columns(2)
 with col1:
     adultos = st.number_input("Adultos", min_value=0, step=1)
 with col2:
-    ninos = st.number_input("Niñes", min_value=0, step=1)
+    ninos = st.number_input("Niñes (Menores de 8 años)", min_value=0, step=1)
 
 restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
 coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
