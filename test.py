@@ -60,7 +60,7 @@ h1, h2 {
 }
 </style>
 """, unsafe_allow_html=True)
-st.image("Foto.jpg", use_column_width=True)
+#st.image("Foto.jpg", use_column_width=True)
 # --- PORTADA ---
 st.markdown("<h1>Flor & Lucas</h1>", unsafe_allow_html=True)
 st.markdown('<p class="center">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
