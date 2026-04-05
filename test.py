@@ -168,4 +168,4 @@ st.markdown(
     '<p class="center" style="opacity:0.6;">Con amor, Flor & Lucas 💖</p>',
     unsafe_allow_html=True
 )
-st.image("Foto1.jpg", use_column_width=True)
+st.image("Foto1.jpeg", use_column_width=True)
