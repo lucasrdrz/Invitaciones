@@ -3,7 +3,26 @@ from datetime import datetime
 import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
+import base64
 
+def get_base64(file):
+    with open(file, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+img = get_base64("Foto1.jpeg")
+
+st.markdown(f"""
+<style>
+.stApp {{
+    background-image: 
+        linear-gradient(rgba(253, 236, 236, 0.85), rgba(253, 236, 236, 0.85)),
+        url("data:image/jpeg;base64,{img}");
+
+    background-size: cover;
+    background-position: center;
+}}
+</style>
+""", unsafe_allow_html=True)
 # --- CONFIG ---
 st.set_page_config(page_title="Flor & Lucas 💍", layout="centered")
 
@@ -79,25 +98,6 @@ st.markdown(
     '<p class="center">Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
     unsafe_allow_html=True
 )
-
-st.markdown("""
-<style>
-.stApp {
-    background-image: 
-        linear-gradient(rgba(253, 236, 236, 0.85), rgba(253, 236, 236, 0.85)),
-        url("Foto1.jpeg");
-
-    background-size: cover;
-    background-position: center;
-    backdrop-filter: blur(4px);
-}
-</style>
-""", unsafe_allow_html=True)
-
-
-
-
-
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
