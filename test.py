@@ -80,6 +80,25 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("""
+<style>
+.stApp {
+    background-image: 
+        linear-gradient(rgba(253, 236, 236, 0.85), rgba(253, 236, 236, 0.85)),
+        url("Foto1.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(4px);
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+
+
+
+
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- EVENTO ---
