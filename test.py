@@ -110,7 +110,7 @@ margin: 30px 0;
 ">
 
 <div style="font-size:22px; margin-bottom:10px;">
-👗 <b>Dress Code</b>
+👗 <b>Dress Code</b> 👗
 </div>
 
 <div style="font-size:18px; margin-bottom:15px;">
