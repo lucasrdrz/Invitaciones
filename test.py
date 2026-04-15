@@ -103,7 +103,26 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- EVENTO ---
 st.markdown("<h2>Detalles del evento</h2>", unsafe_allow_html=True)
-st.markdown('<p class="center"> Dress Code Elegante Sport, Importante tener un detalle ROSA</p>', unsafe_allow_html=True)
+st.markdown("""
+<div style="
+background-color:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+box-shadow: 0px 8px 20px rgba(0,0,0,0.05);
+margin-top:10px;
+">
+
+👗 <b>Dress Code</b><br><br>
+
+Elegante Sport<br><br>
+
+<span style="color:#E8A0A0; font-weight:600;">
+💗 Agregar un detalle en rosa
+</span>
+
+</div>
+""", unsafe_allow_html=True)
 st.markdown('<p class="center">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
 st.markdown('<p class="center">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
