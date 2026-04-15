@@ -139,7 +139,7 @@ st.markdown(
     '<p class="center"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
     unsafe_allow_html=True
 )
-st.image("los cipreses.jpg", use_column_width=True)
+#st.image("los cipreses.jpg", use_column_width=True)
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- CBU ---
