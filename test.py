@@ -122,11 +122,11 @@ color:#d16d6d;
 font-size:16px;
 font-style:italic;
 ">
-💗 <b>No te olvides de la tematica sumar un detalle rosa en tu outfit
-<b></div>
+💗 <b> El único requisito: ¡un toque de rosa en tu look!
+<b>✨ ✨ ✨</div>
 
 <div style="margin-top:15px; font-size:14px; opacity:0.6;">
-✨ ✨ ✨
+
 </div>
 
 </div>
