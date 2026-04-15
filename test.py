@@ -131,7 +131,7 @@ font-style:italic;
 
 </div>
 """, unsafe_allow_html=True)
-img = get_base64("los cipreses.jpg")
+st.image("los cipreses.jpg", use_column_width=True)
 st.markdown('<p class="center">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
 st.markdown('<p class="center">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
