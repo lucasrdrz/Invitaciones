@@ -103,6 +103,7 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- EVENTO ---
 st.markdown("<h2>Detalles del evento</h2>", unsafe_allow_html=True)
+st.markdown('<p class="center"> Dress Code Elegante Sport, Importante tener un detalle ROSA</p>', unsafe_allow_html=True)
 st.markdown('<p class="center">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
 st.markdown('<p class="center">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
