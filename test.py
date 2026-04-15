@@ -105,12 +105,8 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 st.markdown("<h2>Detalles del evento</h2>", unsafe_allow_html=True)
 st.markdown("""
 <div style="
-background-color:white;
-padding:30px;
-border-radius:25px;
 text-align:center;
-box-shadow: 0px 10px 30px rgba(0,0,0,0.06);
-margin: 20px 0;
+margin: 30px 0;
 ">
 
 <div style="font-size:22px; margin-bottom:10px;">
@@ -126,10 +122,10 @@ color:#E8A0A0;
 font-size:16px;
 font-style:italic;
 ">
-💗 Nos encantaría que sumes un detalle en rosa
+💗 No te olvides de sumar un detalle en rosa
 </div>
 
-<div style="margin-top:15px; font-size:14px; opacity:0.5;">
+<div style="margin-top:15px; font-size:14px; opacity:0.6;">
 ✨ ✨ ✨
 </div>
 
