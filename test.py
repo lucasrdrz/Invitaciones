@@ -114,15 +114,15 @@ margin: 30px 0;
 </div>
 
 <div style="font-size:18px; margin-bottom:15px;">
-Elegante Sport
+Elegante 
 </div>
 
 <div style="
-color:#E8A0A0;
+color:#d16d6d;
 font-size:16px;
 font-style:italic;
 ">
-💗 No te olvides de sumar un detalle en rosa
+💗 No te olvides de la tematica sumar un detalle rosa en tu outfit
 </div>
 
 <div style="margin-top:15px; font-size:14px; opacity:0.6;">
