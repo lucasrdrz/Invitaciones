@@ -106,20 +106,32 @@ st.markdown("<h2>Detalles del evento</h2>", unsafe_allow_html=True)
 st.markdown("""
 <div style="
 background-color:white;
-padding:20px;
-border-radius:20px;
+padding:30px;
+border-radius:25px;
 text-align:center;
-box-shadow: 0px 8px 20px rgba(0,0,0,0.05);
-margin-top:10px;
+box-shadow: 0px 10px 30px rgba(0,0,0,0.06);
+margin: 20px 0;
 ">
 
-👗 <b>Dress Code</b><br><br>
+<div style="font-size:22px; margin-bottom:10px;">
+👗 <b>Dress Code</b>
+</div>
 
-Elegante Sport<br><br>
+<div style="font-size:18px; margin-bottom:15px;">
+Elegante Sport
+</div>
 
-<span style="color:#E8A0A0; font-weight:600;">
-💗 Agregar un detalle en rosa
-</span>
+<div style="
+color:#E8A0A0;
+font-size:16px;
+font-style:italic;
+">
+💗 Nos encantaría que sumes un detalle en rosa
+</div>
+
+<div style="margin-top:15px; font-size:14px; opacity:0.5;">
+✨ ✨ ✨
+</div>
 
 </div>
 """, unsafe_allow_html=True)
