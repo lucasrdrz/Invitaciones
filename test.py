@@ -288,6 +288,7 @@ st.markdown(
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
+st.markdown("""
 <p style="font-size:24px;">
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
@@ -333,6 +334,7 @@ btn.addEventListener("click", function() {
     }, 1500);
 });
 </script>
+""", unsafe_allow_html=True)
 
 # --- PLAYLIST ---
 st.markdown("""
