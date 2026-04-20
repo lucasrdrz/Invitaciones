@@ -288,36 +288,30 @@ st.markdown(
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
-CBU = "0720176588000026340436"
-ALIAS = "CAMI.GABI.MACA"
-
-st.markdown(f"""
-<div class="card fade-in" style="text-align:center;">
-
-<p style="font-size:24px; margin-bottom:20px;">
+<p style="font-size:24px;">
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
 </p>
 
-<p style="font-size:22px; margin-bottom:10px;">
-<b>CBU:</b> {CBU}
+<p style="font-size:22px;">
+<b>CBU:</b> 0720176588000026340436
 </p>
 
-<p style="font-size:22px; margin-bottom:20px;">
-<b>Alias:</b> {ALIAS}
+<p style="font-size:22px;">
+<b>Alias:</b> CAMI.GABI.MACA
 </p>
 
-<button onclick="navigator.clipboard.writeText('{CBU}')"
+<button onclick="navigator.clipboard.writeText('0720176588000026340436')" 
 style="
-    margin-top:10px;
-    background-color:#E8A0A0;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    font-size:18px;
-    border-radius:12px;
-    cursor:pointer;
-    transition: all 0.3s ease;
+margin-top:10px;
+background-color:#E8A0A0;
+color:white;
+border:none;
+padding:12px 22px;
+font-size:18px;
+border-radius:12px;
+cursor:pointer;
+transition: all 0.3s ease;
 "
 onmouseover="this.style.transform='scale(1.05)'"
 onmouseout="this.style.transform='scale(1)'"
@@ -325,23 +319,20 @@ onmouseout="this.style.transform='scale(1)'"
 📋 Copiar CBU
 </button>
 
-<p id="copiado" style="opacity:0; margin-top:10px; font-size:16px;">
+<p id="copiado" style="opacity:0; margin-top:10px;">
 ✅ Copiado!
 </p>
 
 <script>
 const btn = document.querySelector("button");
-btn.addEventListener("click", function() {{
+btn.addEventListener("click", function() {
     const msg = document.getElementById("copiado");
     msg.style.opacity = 1;
-    setTimeout(() => {{
+    setTimeout(() => {
         msg.style.opacity = 0;
-    }}, 1500);
-}});
+    }, 1500);
+});
 </script>
-
-</div>
-""", unsafe_allow_html=True)
 
 # --- PLAYLIST ---
 st.markdown("""
