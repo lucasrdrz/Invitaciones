@@ -258,8 +258,8 @@ Y como nos casamos un 3 de octubre…<br>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in" style="font-size:30px;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in" style="font-size:30px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:20px;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:20px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 st.markdown(
     '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
