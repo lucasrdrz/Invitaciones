@@ -83,7 +83,7 @@ h1, h2 {
 # --- PORTADA ---
 st.markdown("<h1>Flor & Lucas</h1>", unsafe_allow_html=True)
 #st.markdown('<p class="center">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
-st.markdown('<p class="center" style="font-size:20px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
+st.markdown('<p class="center" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
 st.markdown('<p class="center">03 de Octubre 2026</p>', unsafe_allow_html=True)
 
 # --- CONTADOR ---
