@@ -109,23 +109,23 @@ text-align:center;
 margin: 30px 0;
 ">
 
-<div style="font-size:22px; margin-bottom:10px;">
+<div style="font-size:28px; margin-bottom:10px;">
 👗 <b>Dress Code</b> 👗
 </div>
 
-<div style="font-size:18px; margin-bottom:15px;">
+<div style="font-size:26px; margin-bottom:15px;">
 Elegante 
 </div>
 
 <div style="
 color:#d16d6d;
-font-size:16px;
+font-size:20px;
 font-style:italic;
 ">
 💗 <b> El único requisito: ¡un toque de rosa en tu look!
 <b>✨ ✨ ✨</div>
 
-<div style="margin-top:15px; font-size:14px; opacity:0.6;">
+<div style="margin-top:15px; font-size:16px; opacity:0.6;">
 
 </div>
 
@@ -210,6 +210,28 @@ if st.button("Confirmar asistencia"):
         st.success("💖 ¡Gracias por confirmar! Te esperamos")
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="center">
+    <p style="font-size:26px;">🎶 Agregá una canción a la fiesta</p>
+    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
+        <button style="
+            background-color:#ff4b4b;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            font-size:20px;
+            border-radius:10px;
+            cursor:pointer;
+        ">
+            🎧 Agregar canción
+        </button>
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+
+
 
 # --- FOOTER ---
 st.markdown(
