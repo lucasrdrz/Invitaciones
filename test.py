@@ -184,6 +184,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+
 # --- RSVP ---
 st.markdown("<h2>Confirmar asistencia</h2>", unsafe_allow_html=True)
 
