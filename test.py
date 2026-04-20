@@ -313,28 +313,20 @@ style="
     background-color:#E8A0A0;
     color:white;
     border:none;
-    padding:12px 20px;
+    padding:12px 22px;
     font-size:18px;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
-">
+    transition: all 0.3s ease;
+"
+onmousedown="this.innerText='✅ Copiado!'; this.style.backgroundColor='#d98c8c';"
+onmouseup="setTimeout(() => {{
+    this.innerText='📋 Copiar CBU';
+    this.style.backgroundColor='#E8A0A0';
+}}, 1500);"
+>
 📋 Copiar CBU
 </button>
-
-<p id="copiado" style="opacity:0; margin-top:10px;">
-✅ Copiado!
-</p>
-
-<script>
-const btn = document.querySelector("button");
-btn.addEventListener("click", function() {{
-    const msg = document.getElementById("copiado");
-    msg.style.opacity = 1;
-    setTimeout(() => {{
-        msg.style.opacity = 0;
-    }}, 1500);
-}});
-</script>
 
 </div>
 """, unsafe_allow_html=True)
