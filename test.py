@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 import base64
 
-# --- FUNCION IMAGEN FONDO ---
+# --- FUNCION IMAGEN ---
 def get_base64(file):
     with open(file, "rb") as f:
         return base64.b64encode(f.read()).decode()
@@ -43,33 +43,43 @@ sheet = client.open_by_key(
     "1SnktIvny6sN1hfr2QfgRLZfEkiPaPQPEv6b31ko_Ucg"
 ).worksheet("Respuestas de la invitacion")
 
-# --- CSS GENERAL ---
+# --- CSS PRO ---
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-.stApp {
-    background-color: #FDECEC;
-}
-
+/* GENERAL */
 html, body {
     font-family: 'Poppins', sans-serif;
     color: #5F5F5F;
 }
 
+.stApp {
+    background-color: #FDECEC;
+}
+
+/* TITULO */
 .title {
     font-family: 'Great Vibes', cursive;
     text-align: center;
     font-size: 60px;
+    animation: fadeInTitle 2s ease;
 }
 
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* SUBTITULOS */
 h2 {
     font-family: 'Playfair Display', serif;
     text-align: center;
     color: #E8A0A0;
 }
 
+/* DIVIDER */
 .divider {
     height: 1px;
     background: #E8A0A0;
@@ -77,16 +87,53 @@ h2 {
     margin: 40px 0;
 }
 
+/* CENTRO */
 .center {
     text-align: center;
 }
 
-.stButton button {
-    background-color: #E8A0A0;
-    color: white;
-    border-radius: 12px;
+/* TARJETAS */
+.card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    margin: 30px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
+/* BOTON */
+.button-premium {
+    background-color:#E8A0A0;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    font-size:20px;
+    border-radius:12px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+.button-premium:hover {
+    transform: scale(1.05);
+    background-color:#d98c8c;
+}
+
+/* ANIMACION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* OCULTAR MENU */
 #MainMenu, header, footer {
     visibility: hidden;
 }
@@ -95,30 +142,31 @@ h2 {
 
 # --- PORTADA ---
 st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
-st.markdown('<p class="center" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
-st.markdown('<p class="center">03 de Octubre 2026</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_html=True)
 
 # --- CONTADOR ---
 fecha_evento = datetime(2026, 10, 3)
 dias = (fecha_evento - datetime.now()).days
-st.markdown(f'<p class="center"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
+st.markdown(f'<p class="center fade-in"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- HISTORIA ---
-st.markdown("<h2>Te Invitamos a nuestra Boda</h2>", unsafe_allow_html=True)
+st.markdown('<h2 class="fade-in">Te Invitamos a nuestra Boda</h2>', unsafe_allow_html=True)
 st.markdown(
-    '<p class="center">Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
+    '<p class="center fade-in">Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
     unsafe_allow_html=True
 )
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- EVENTO ---
-st.markdown("<h2>Detalles del evento</h2>", unsafe_allow_html=True)
+st.markdown('<h2 class="fade-in">Detalles del evento</h2>', unsafe_allow_html=True)
 
 st.markdown("""
-<div style='text-align:center; margin: 30px 0;'>
+<div class="card fade-in">
+<div style='text-align:center;'>
 
 <div style='font-size:28px; margin-bottom:10px;'>
 👗 <b>Dress Code</b> 👗
@@ -129,27 +177,28 @@ Elegante
 </div>
 
 <div style='color:#d16d6d; font-size:20px; font-style:italic;'>
-💗 <b>El único requisito: ¡un toque de rosa en tu look!</b> ✨ ✨ ✨
+💗 <b>El único requisito: ¡un toque de rosa en tu look!</b>
 </div>
 
+</div>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 st.markdown(
-    '<p class="center"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
+    '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
     unsafe_allow_html=True
 )
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
-st.markdown("<h2>Regalo</h2>", unsafe_allow_html=True)
+st.markdown('<h2 class="fade-in">Regalo</h2>', unsafe_allow_html=True)
 
 st.markdown("""
-<p class="center">
+<p class="center fade-in">
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
 </p>
@@ -158,8 +207,8 @@ Podés ayudarnos con nuestra luna de miel ✈️
 CBU = "0720176588000026340436"
 ALIAS = "CAMI.GABI.MACA"
 
-st.markdown(f'<p class="center"><b>CBU:</b> {CBU}</p>', unsafe_allow_html=True)
-st.markdown(f'<p class="center"><b>Alias:</b> {ALIAS}</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="center fade-in"><b>CBU:</b> {CBU}</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="center fade-in"><b>Alias:</b> {ALIAS}</p>', unsafe_allow_html=True)
 
 st.code(CBU, language=None)
 st.caption("👆 Tocá para copiar el CBU")
@@ -168,20 +217,10 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- PLAYLIST ---
 st.markdown("""
-<div class="center">
+<div class="center fade-in">
     <p style="font-size:26px;">🎶 Agregá una canción a la fiesta</p>
     <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
-        <button style="
-            background-color:#ff4b4b;
-            color:white;
-            border:none;
-            padding:10px 20px;
-            font-size:20px;
-            border-radius:10px;
-            cursor:pointer;
-        ">
-            🎧 Agregar canción
-        </button>
+        <button class="button-premium">🎧 Agregar canción</button>
     </a>
 </div>
 """, unsafe_allow_html=True)
@@ -189,7 +228,7 @@ st.markdown("""
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- RSVP ---
-st.markdown("<h2>Confirmar asistencia</h2>", unsafe_allow_html=True)
+st.markdown('<h2 class="fade-in">Confirmar asistencia</h2>', unsafe_allow_html=True)
 
 nombre = st.text_input("Nombre y apellido")
 asistencia = st.selectbox("¿Asistís?", ["Sí", "No"])
