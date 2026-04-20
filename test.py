@@ -163,6 +163,27 @@ st.caption("👆 Tocá para copiar el CBU")
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
+#DJ
+st.markdown("""
+<div class="center">
+    <p style="font-size:26px;">🎶 Ayudamos con las canciones de la noche</p>
+    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
+        <button style="
+            background-color:#ff4b4b;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            font-size:20px;
+            border-radius:10px;
+            cursor:pointer;
+        ">
+            🎧 Agregar canción
+        </button>
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+
 # --- RSVP ---
 st.markdown("<h2>Confirmar asistencia</h2>", unsafe_allow_html=True)
 
@@ -210,25 +231,6 @@ if st.button("Confirmar asistencia"):
         st.success("💖 ¡Gracias por confirmar! Te esperamos")
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-
-st.markdown("""
-<div class="center">
-    <p style="font-size:26px;">🎶 Agregá una canción a la fiesta</p>
-    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
-        <button style="
-            background-color:#ff4b4b;
-            color:white;
-            border:none;
-            padding:10px 20px;
-            font-size:20px;
-            border-radius:10px;
-            cursor:pointer;
-        ">
-            🎧 Agregar canción
-        </button>
-    </a>
-</div>
-""", unsafe_allow_html=True)
 
 
 
