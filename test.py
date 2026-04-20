@@ -262,7 +262,7 @@ st.markdown('<p class="center fade-in" style="font-size:20px;">📍 Los Cipreses
 st.markdown('<p class="center fade-in" style="font-size:20px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 st.markdown(
-    '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
+    '<p class="center fade-in"><a href="https://maps.app.goo.gl/TnEYrN58aaj6j29v5" target="_blank">📍 Ver ubicación</a></p>',
     unsafe_allow_html=True
 )
 
