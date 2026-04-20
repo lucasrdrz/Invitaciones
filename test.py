@@ -237,17 +237,20 @@ Elegante
 <div style='
 text-align:center;
 color:#d16d6d;
-font-size:20px;
-font-style:italic;
+font-size:22px;
 '>
 
+<span style="font-style:italic;">
 <span style="color:#E8A0A0;">❤</span> 
 <b>"On Wednesdays we wear pink"</b>
+</span>
 
 <br><br>
 
+<span style="font-style:normal;">
 Y como nos casamos un 3 de octubre…<br>
-¡sumale un toque de rosa en tu look! 😉
+¡sumale un toque de rosa en tu look! 
+</span>
 
 </div>
 
@@ -255,8 +258,8 @@ Y como nos casamos un 3 de octubre…<br>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:30px;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:30px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 st.markdown(
     '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
