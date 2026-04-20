@@ -4,6 +4,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 import base64
+import time
 
 # --- FUNCION IMAGEN ---
 def get_base64(file):
@@ -133,12 +134,68 @@ h2 {
     }
 }
 
+/* PETALOS */
+.petal {
+    position: fixed;
+    top: -10px;
+    width: 12px;
+    height: 12px;
+    background: #f7b5b5;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 40px !important;
+    }
+
+    .center {
+        font-size: 20px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+
+    .card {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .button-premium {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+
 /* OCULTAR MENU */
 #MainMenu, header, footer {
     visibility: hidden;
 }
 </style>
 """, unsafe_allow_html=True)
+
+# --- PETALOS ---
+petals_html = ""
+for i in range(20):
+    petals_html += f"""
+    <div class="petal" style="
+        left:{i*5}%;
+        animation-duration:{5 + i%5}s;
+        animation-delay:{i*0.3}s;
+    "></div>
+    """
+st.markdown(petals_html, unsafe_allow_html=True)
 
 # --- PORTADA ---
 st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
@@ -148,6 +205,7 @@ st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_htm
 # --- CONTADOR ---
 fecha_evento = datetime(2026, 10, 3)
 dias = (fecha_evento - datetime.now()).days
+
 st.markdown(f'<p class="center fade-in"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
