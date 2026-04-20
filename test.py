@@ -269,6 +269,9 @@ st.markdown(
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
+CBU = "0720176588000026340436"
+ALIAS = "CAMI.GABI.MACA"
+
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
 
