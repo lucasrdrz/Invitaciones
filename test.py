@@ -272,7 +272,7 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 st.markdown('<h2 class="fade-in">Regalo</h2>', unsafe_allow_html=True)
 
 st.markdown("""
-<p class="center fade-in">
+<p class="center fade-in" style="font-size:24px;">
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
 </p>
@@ -281,11 +281,23 @@ Podés ayudarnos con nuestra luna de miel ✈️
 CBU = "0720176588000026340436"
 ALIAS = "CAMI.GABI.MACA"
 
-st.markdown(f'<p class="center fade-in"><b>CBU:</b> {CBU}</p>', unsafe_allow_html=True)
-st.markdown(f'<p class="center fade-in"><b>Alias:</b> {ALIAS}</p>', unsafe_allow_html=True)
+st.markdown(f'''
+<p class="center fade-in" style="font-size:22px;">
+<b>CBU:</b> {CBU}
+</p>
+''', unsafe_allow_html=True)
 
-st.code(CBU, language=None)
-st.caption("👆 Tocá para copiar el CBU")
+st.markdown(f'''
+<p class="center fade-in" style="font-size:22px;">
+<b>Alias:</b> {ALIAS}
+</p>
+''', unsafe_allow_html=True)
+
+st.markdown(f'''
+<p class="center fade-in" style="font-size:18px; opacity:0.7;">
+👆 Tocá para copiar el CBU
+</p>
+''', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
