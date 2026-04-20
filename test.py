@@ -47,32 +47,34 @@ sheet = client.open_by_key(
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-.title {
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    font-size: 60px;
+/* Fondo general */
+.stApp {
+    background-color: #FDECEC;
 }
-</style>
-""", unsafe_allow_html=True)
 
-.stApp { background-color: #FDECEC; }
-
-#MainMenu, header, footer { visibility: hidden; }
-
+/* Tipografía general */
 html, body {
     font-family: 'Poppins', sans-serif;
     color: #5F5F5F;
 }
 
-h1, h2 {
+/* TITULO PRINCIPAL (Flor & Lucas) */
+.title {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 60px;
+}
+
+/* Subtítulos */
+h2 {
     font-family: 'Playfair Display', serif;
     text-align: center;
     color: #E8A0A0;
 }
 
+/* Divider */
 .divider {
     height: 1px;
     background: #E8A0A0;
@@ -80,14 +82,24 @@ h1, h2 {
     margin: 40px 0;
 }
 
-.center { text-align: center; }
+/* Centrado */
+.center {
+    text-align: center;
+}
 
+/* Botones */
 .stButton button {
     background-color: #E8A0A0;
     color: white;
     border-radius: 12px;
 }
+
+/* Ocultar menú */
+#MainMenu, header, footer {
+    visibility: hidden;
+}
 </style>
+""", unsafe_allow_html=True)
 """, unsafe_allow_html=True)
 #st.image("Foto.jpg", use_column_width=True)
 # --- PORTADA ---
