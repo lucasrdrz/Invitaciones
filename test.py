@@ -241,9 +241,8 @@ font-size:20px;
 font-style:italic;
 '>
 
-<span style="font-size:22px;">
-💗 <b>"On Wednesdays we wear pink"</b>
-</span>
+<span style="color:#E8A0A0;">❤</span> 
+<b>"On Wednesdays we wear pink"</b>
 
 <br><br>
 
