@@ -269,37 +269,53 @@ st.markdown(
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
-st.markdown('<h2 class="fade-in">Regalo</h2>', unsafe_allow_html=True)
+st.markdown(f"""
+<div class="card fade-in" style="text-align:center;">
 
-st.markdown("""
-<p class="center fade-in" style="font-size:24px;">
+<p style="font-size:24px;">
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
 </p>
-""", unsafe_allow_html=True)
 
-CBU = "0720176588000026340436"
-ALIAS = "CAMI.GABI.MACA"
-
-st.markdown(f'''
-<p class="center fade-in" style="font-size:22px;">
+<p style="font-size:22px;">
 <b>CBU:</b> {CBU}
 </p>
-''', unsafe_allow_html=True)
 
-st.markdown(f'''
-<p class="center fade-in" style="font-size:22px;">
+<p style="font-size:22px;">
 <b>Alias:</b> {ALIAS}
 </p>
-''', unsafe_allow_html=True)
 
-st.markdown(f'''
-<p class="center fade-in" style="font-size:18px; opacity:0.7;">
-👆 Tocá para copiar el CBU
+<button onclick="navigator.clipboard.writeText('{CBU}')"
+style="
+    margin-top:15px;
+    background-color:#E8A0A0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+">
+📋 Copiar CBU
+</button>
+
+<p id="copiado" style="opacity:0; margin-top:10px;">
+✅ Copiado!
 </p>
-''', unsafe_allow_html=True)
 
-st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+<script>
+const btn = document.querySelector("button");
+btn.addEventListener("click", function() {{
+    const msg = document.getElementById("copiado");
+    msg.style.opacity = 1;
+    setTimeout(() => {{
+        msg.style.opacity = 0;
+    }}, 1500);
+}});
+</script>
+
+</div>
+""", unsafe_allow_html=True)
 
 # --- PLAYLIST ---
 st.markdown("""
