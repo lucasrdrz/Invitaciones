@@ -48,6 +48,16 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 60px;
+}
+</style>
+""", unsafe_allow_html=True)
+
 .stApp { background-color: #FDECEC; }
 
 #MainMenu, header, footer { visibility: hidden; }
@@ -81,7 +91,7 @@ h1, h2 {
 """, unsafe_allow_html=True)
 #st.image("Foto.jpg", use_column_width=True)
 # --- PORTADA ---
-st.markdown("<h1>Flor & Lucas</h1>", unsafe_allow_html=True)
+st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
 #st.markdown('<p class="center">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
 st.markdown('<p class="center" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
 st.markdown('<p class="center">03 de Octubre 2026</p>', unsafe_allow_html=True)
