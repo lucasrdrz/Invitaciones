@@ -234,8 +234,22 @@ st.markdown("""
 Elegante 
 </div>
 
-<div style='color:#d16d6d; font-size:20px; font-style:italic;'>
-💗 <b>El único requisito: ¡un toque de rosa en tu look!</b>
+<div style='
+text-align:center;
+color:#d16d6d;
+font-size:20px;
+font-style:italic;
+'>
+
+<span style="font-size:22px;">
+💗 <b>"On Wednesdays we wear pink"</b>
+</span>
+
+<br><br>
+
+Y como nos casamos un 3 de octubre…<br>
+¡sumale un toque de rosa en tu look! 😉
+
 </div>
 
 </div>
