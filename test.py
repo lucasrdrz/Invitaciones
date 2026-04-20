@@ -294,34 +294,38 @@ ALIAS = "CAMI.GABI.MACA"
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
 
-<p style="font-size:24px;">
+<p style="font-size:24px; margin-bottom:20px;">
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
 </p>
 
-<p style="font-size:22px;">
+<p style="font-size:22px; margin-bottom:10px;">
 <b>CBU:</b> {CBU}
 </p>
 
-<p style="font-size:22px;">
+<p style="font-size:22px; margin-bottom:20px;">
 <b>Alias:</b> {ALIAS}
 </p>
 
 <button onclick="navigator.clipboard.writeText('{CBU}')"
 style="
-    margin-top:15px;
+    margin-top:10px;
     background-color:#E8A0A0;
     color:white;
     border:none;
-    padding:12px 20px;
+    padding:12px 22px;
     font-size:18px;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
-">
+    transition: all 0.3s ease;
+"
+onmouseover="this.style.transform='scale(1.05)'"
+onmouseout="this.style.transform='scale(1)'"
+>
 📋 Copiar CBU
 </button>
 
-<p id="copiado" style="opacity:0; margin-top:10px;">
+<p id="copiado" style="opacity:0; margin-top:10px; font-size:16px;">
 ✅ Copiado!
 </p>
 
