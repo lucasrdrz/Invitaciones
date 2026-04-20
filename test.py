@@ -218,38 +218,57 @@ st.markdown(
 )
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+st.markdown("""
+<style>
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+</style>
+""", unsafe_allow_html=True)
 
 # --- EVENTO ---
 st.markdown('<h2 class="fade-in">Detalles del evento</h2>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="card fade-in">
+
 <div style='text-align:center;'>
 
-<div style='font-size:28px; margin-bottom:10px;'>
+<div style='font-size:30px; margin-bottom:15px;'>
 👗 <b>Dress Code</b> 👗
 </div>
 
-<div style='font-size:26px; margin-bottom:15px;'>
+<div style='font-size:24px; margin-bottom:20px;'>
 Elegante 
 </div>
 
-<div style='
-text-align:center;
-color:#d16d6d;
-font-size:22px;
-'>
+<div style='color:#d16d6d; font-size:22px;'>
 
-<span style="font-style:italic;">
+<span style="font-style:italic; font-size:24px;">
 <span style="color:#E8A0A0;">❤</span> 
 <b>"On Wednesdays we wear pink"</b>
 </span>
 
 <br><br>
 
-<span style="font-style:normal;">
+<span style="font-size:20px;">
 Y como nos casamos un 3 de octubre…<br>
-¡sumale un toque de rosa en tu look! 
+¡sumale un toque de rosa en tu look! 😉
 </span>
 
 </div>
@@ -258,8 +277,8 @@ Y como nos casamos un 3 de octubre…<br>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in" style="font-size:20px;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in" style="font-size:20px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:28px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:24px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 st.markdown(
     '<p class="center fade-in"><a href="https://maps.app.goo.gl/TnEYrN58aaj6j29v5" target="_blank">📍 Ver ubicación</a></p>',
