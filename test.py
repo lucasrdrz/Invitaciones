@@ -186,14 +186,7 @@ h2 {
 </style>
 """, unsafe_allow_html=True)
 
-.title {
-    font-family: 'Parisienne', cursive;
-    text-align: center;
-    font-size: 70px;
-    letter-spacing: 2px;
-    color: #E8A0A0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-}
+
 # --- PETALOS ---
 petals_html = ""
 for i in range(20):
@@ -205,7 +198,22 @@ for i in range(20):
     "></div>
     """
 st.markdown(petals_html, unsafe_allow_html=True)
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
+/* TITULO */
+.title {
+    font-family: 'Parisienne', cursive;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 2px;
+    color: #E8A0A0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+</style>
+
+""", unsafe_allow_html=True)
 # --- PORTADA ---
 st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
