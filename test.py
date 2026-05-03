@@ -4,7 +4,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 import base64
-import streamlit.components.v1 as components
+import time
 
 # --- FUNCION IMAGEN ---
 def get_base64(file):
@@ -48,7 +48,7 @@ sheet = client.open_by_key(
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* GENERAL */
 html, body {
@@ -56,14 +56,21 @@ html, body {
     color: #5F5F5F;
 }
 
+.stApp {
+    background-color: #FDECEC;
+}
+
 /* TITULO */
 .title {
-    font-family: 'Parisienne', cursive;
+    font-family: 'Great Vibes', cursive;
     text-align: center;
-    font-size: 70px;
-    letter-spacing: 2px;
-    color: #E8A0A0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    font-size: 60px;
+    animation: fadeInTitle 2s ease;
+}
+
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 /* SUBTITULOS */
@@ -105,6 +112,12 @@ h2 {
     font-size:20px;
     border-radius:12px;
     cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+.button-premium:hover {
+    transform: scale(1.05);
+    background-color:#d98c8c;
 }
 
 /* ANIMACION */
@@ -121,6 +134,50 @@ h2 {
     }
 }
 
+/* PETALOS */
+.petal {
+    position: fixed;
+    top: -10px;
+    width: 12px;
+    height: 12px;
+    background: #f7b5b5;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 40px !important;
+    }
+
+    .center {
+        font-size: 20px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+
+    .card {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .button-premium {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+
 /* OCULTAR MENU */
 #MainMenu, header, footer {
     visibility: hidden;
@@ -128,7 +185,19 @@ h2 {
 </style>
 """, unsafe_allow_html=True)
 
-# --- TITULO ---
+# --- PETALOS ---
+petals_html = ""
+for i in range(20):
+    petals_html += f"""
+    <div class="petal" style="
+        left:{i*5}%;
+        animation-duration:{5 + i%5}s;
+        animation-delay:{i*0.3}s;
+    "></div>
+    """
+st.markdown(petals_html, unsafe_allow_html=True)
+
+# --- PORTADA ---
 st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_html=True)
@@ -136,51 +205,52 @@ st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_htm
 # --- CONTADOR ---
 fecha_evento = datetime(2026, 10, 3)
 dias = (fecha_evento - datetime.now()).days
+
 st.markdown(f'<p class="center fade-in"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
-# --- EVENTO ---
+# --- HISTORIA ---
+st.markdown('<h2 class="fade-in">Te Invitamos a nuestra Boda</h2>', unsafe_allow_html=True)
+st.markdown(
+    '<p class="center fade-in">Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
+    unsafe_allow_html=True
+)
+
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+
 # --- EVENTO ---
 st.markdown('<h2 class="fade-in">Detalles del evento</h2>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="card fade-in">
+<div style='text-align:center;'>
 
-    <div style='text-align:center;'>
+<div style='font-size:28px; margin-bottom:10px;'>
+👗 <b>Dress Code</b> 👗
+</div>
 
-        <div style='font-size:28px; margin-bottom:10px;'>
-            👗 <b>Dress Code</b> 👗
-        </div>
+<div style='font-size:26px; margin-bottom:15px;'>
+Elegante 
+</div>
 
-        <div style='font-size:26px; margin-bottom:15px;'>
-            Elegante
-        </div>
-
-        <div style='
-            text-align:center;
-            color:#d16d6d;
-            font-size:22px;
-        '>
-
-            <span style="font-style:italic;">
-                <span style="color:#E8A0A0;">❤</span>
-                <b>"On Wednesdays we wear pink"</b>
-            </span>
-
-            <br><br>
-
-            <span style="font-style:normal;">
-                Y como nos casamos un 3 de octubre…<br>
-                ¡sumale un toque de rosa en tu look!
-            </span>
-
-        </div>
-
-    </div>
+<div style='color:#d16d6d; font-size:20px; font-style:italic;'>
+💗 <b>El único requisito: ¡un toque de rosa en tu look!</b>
+</div>
 
 </div>
+</div>
 """, unsafe_allow_html=True)
+
+st.markdown('<p class="center fade-in">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in">🕒 17:45 hs</p>', unsafe_allow_html=True)
+
+st.markdown(
+    '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
+    unsafe_allow_html=True
+)
+
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
