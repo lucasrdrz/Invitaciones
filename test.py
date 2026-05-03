@@ -206,14 +206,14 @@ st.markdown('<p class="center fade-in" style="font-size:32px;">03 de Octubre 202
 fecha_evento = datetime(2026, 10, 3)
 dias = (fecha_evento - datetime.now()).days
 
-st.markdown(f'<p class="center fade-in" style="font-size:32px><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
+st.markdown(f'<p class="center fade-in"style="font-size:32px"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- HISTORIA ---
 st.markdown('<h2 class="fade-in">Te Invitamos a nuestra Boda</h2>', unsafe_allow_html=True)
 st.markdown(
-    '<p class="center fade-in" style="font-size:32px>Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
+    '<p class="center fade-in" style="font-size:32px">Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
     unsafe_allow_html=True
 )
 
