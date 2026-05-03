@@ -335,7 +335,7 @@ with col2:
 restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
 coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
 
-traslado = st.selectbox("¿Necesitarias traslado?", ["No", "Lanús", "Capital"])
+traslado = st.selectbox("¿Necesitarias traslado?", ["No", "Lanús", "Capital","Voy en Auto","Voy en Auto, puedo alcanzar a alguien"])
 
 data = sheet.get_all_records()
 df = pd.DataFrame(data)
