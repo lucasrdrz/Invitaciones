@@ -246,7 +246,7 @@ Elegante
 
 <span style="font-size:20px;">
 Y como nos casamos un 3 de octubre…<br>
-¡sumale un toque de rosa en tu look! 😉
+¡sumale un toque de rosa en tu look! 
 </span>
 
 </div>
