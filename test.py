@@ -265,19 +265,21 @@ ALIAS = "CAMI.GABI.MACA"
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
 
-<p style="font-size:32px;">
+<p style='font-size:32px;'>
 Si querés hacernos un regalo 💕<br><br>
 Podés ayudarnos con nuestra luna de miel ✈️
 </p>
 
-<p style="font-size:32px;">
+<p style='font-size:32px;'>
 <b>CBU:</b> {CBU}
 </p>
 
-<p style="font-size:32px;">
+<p style='font-size:32px;'>
 <b>Alias:</b> {ALIAS}
 </p>
 
+</div>
+""", unsafe_allow_html=True)
 # BOTON FUNCIONAL
 components.html(f"""
 <div style="text-align:center;">
