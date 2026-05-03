@@ -5,6 +5,7 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 import base64
 import time
+import streamlit.components.v1 as components
 
 # --- FUNCION IMAGEN ---
 def get_base64(file):
@@ -185,6 +186,14 @@ h2 {
 </style>
 """, unsafe_allow_html=True)
 
+.title {
+    font-family: 'Parisienne', cursive;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 2px;
+    color: #E8A0A0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
 # --- PETALOS ---
 petals_html = ""
 for i in range(20):
@@ -318,6 +327,20 @@ style="
     border-radius:10px;
     cursor:pointer;
 ">
+components.html(f"""
+<div style="text-align:center;">
+
+<button onclick="copiarCBU()"
+style="
+    margin-top:15px;
+    background-color:#E8A0A0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+">
 📋 Copiar CBU
 </button>
 
@@ -325,19 +348,21 @@ style="
 ✅ Copiado!
 </p>
 
+</div>
+
 <script>
-const btn = document.querySelector("button");
-btn.addEventListener("click", function() {{
+function copiarCBU() {{
+    navigator.clipboard.writeText("{CBU}");
     const msg = document.getElementById("copiado");
     msg.style.opacity = 1;
     setTimeout(() => {{
         msg.style.opacity = 0;
     }}, 1500);
-}});
+}}
 </script>
+""", height=150)
 
-</div>
-""", unsafe_allow_html=True)
+
 # --- PLAYLIST ---
 st.markdown("""
 <div class="center fade-in">
