@@ -366,7 +366,4 @@ if st.button("Confirmar asistencia"):
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- FOOTER ---
-st.markdown('<p class="center" style="opacity:0.6;">Con amor, Flor & Lucas 💖</p>', unsafe_allow_html=True)
-
-# --- FOOTER ---
 st.markdown('<p class="center">Con amor, Flor & Lucas 💖</p>', unsafe_allow_html=True)
