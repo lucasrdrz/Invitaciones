@@ -4,7 +4,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 import base64
-import time
 import streamlit.components.v1 as components
 
 # --- FUNCION IMAGEN ---
@@ -49,7 +48,7 @@ sheet = client.open_by_key(
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
 /* GENERAL */
 html, body {
@@ -57,21 +56,14 @@ html, body {
     color: #5F5F5F;
 }
 
-.stApp {
-    background-color: #FDECEC;
-}
-
 /* TITULO */
 .title {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Parisienne', cursive;
     text-align: center;
-    font-size: 60px;
-    animation: fadeInTitle 2s ease;
-}
-
-@keyframes fadeInTitle {
-    from { opacity: 0; transform: translateY(-20px);}
-    to { opacity: 1; transform: translateY(0);}
+    font-size: 70px;
+    letter-spacing: 2px;
+    color: #E8A0A0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
 }
 
 /* SUBTITULOS */
@@ -113,12 +105,6 @@ h2 {
     font-size:20px;
     border-radius:12px;
     cursor:pointer;
-    transition: all 0.3s ease;
-}
-
-.button-premium:hover {
-    transform: scale(1.05);
-    background-color:#d98c8c;
 }
 
 /* ANIMACION */
@@ -135,50 +121,6 @@ h2 {
     }
 }
 
-/* PETALOS */
-.petal {
-    position: fixed;
-    top: -10px;
-    width: 12px;
-    height: 12px;
-    background: #f7b5b5;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .title {
-        font-size: 40px !important;
-    }
-
-    .center {
-        font-size: 20px !important;
-    }
-
-    h2 {
-        font-size: 24px !important;
-    }
-
-    .card {
-        padding: 15px;
-        margin: 20px 0;
-    }
-
-    .button-premium {
-        font-size: 16px;
-        padding: 10px 18px;
-    }
-}
-
 /* OCULTAR MENU */
 #MainMenu, header, footer {
     visibility: hidden;
@@ -186,35 +128,7 @@ h2 {
 </style>
 """, unsafe_allow_html=True)
 
-
-# --- PETALOS ---
-petals_html = ""
-for i in range(20):
-    petals_html += f"""
-    <div class="petal" style="
-        left:{i*5}%;
-        animation-duration:{5 + i%5}s;
-        animation-delay:{i*0.3}s;
-    "></div>
-    """
-st.markdown(petals_html, unsafe_allow_html=True)
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-
-/* TITULO */
-.title {
-    font-family: 'Parisienne', cursive;
-    text-align: center;
-    font-size: 70px;
-    letter-spacing: 2px;
-    color: #E8A0A0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-}
-</style>
-
-""", unsafe_allow_html=True)
-# --- PORTADA ---
+# --- TITULO ---
 st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_html=True)
@@ -222,85 +136,30 @@ st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_htm
 # --- CONTADOR ---
 fecha_evento = datetime(2026, 10, 3)
 dias = (fecha_evento - datetime.now()).days
-
 st.markdown(f'<p class="center fade-in"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-
-# --- HISTORIA ---
-st.markdown('<h2 class="fade-in">Te Invitamos a nuestra Boda</h2>', unsafe_allow_html=True)
-st.markdown(
-    '<p class="center fade-in">Compartimos 15 años juntos y queremos celebrarlo con ustedes ❤️</p>',
-    unsafe_allow_html=True
-)
-
-st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-st.markdown("""
-<style>
-.card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border-radius: 20px;
-    padding: 30px;
-    margin: 30px 0;
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-}
-</style>
-""", unsafe_allow_html=True)
 
 # --- EVENTO ---
 st.markdown('<h2 class="fade-in">Detalles del evento</h2>', unsafe_allow_html=True)
 
 st.markdown("""
-<div class="card fade-in">
+<div class="card fade-in" style="text-align:center;">
 
-<div style='text-align:center;'>
+<div style='font-size:30px;'>👗 <b>Dress Code</b></div>
+<div style='font-size:24px;'>Elegante</div>
 
-<div style='font-size:30px; margin-bottom:15px;'>
-👗 <b>Dress Code</b> 👗
+<br>
+
+<div style='font-size:20px;'>
+Sumale un toque de rosa 😉
 </div>
 
-<div style='font-size:24px; margin-bottom:20px;'>
-Elegante 
-</div>
-
-<div style='color:#d16d6d; font-size:22px;'>
-
-<span style="font-style:italic; font-size:24px;">
-<span style="color:#E8A0A0;">❤</span> 
-<b>"On Wednesdays we wear pink"</b>
-</span>
-
-<br><br>
-
-<span style="font-size:20px;">
-Y como nos casamos un 3 de octubre…<br>
-¡sumale un toque de rosa en tu look! 😉
-</span>
-
-</div>
-
-</div>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in" style="font-size:28px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:28px;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in" style="font-size:24px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
-
-st.markdown(
-    '<p class="center fade-in"><a href="https://maps.app.goo.gl/TnEYrN58aaj6j29v5" target="_blank">📍 Ver ubicación</a></p>',
-    unsafe_allow_html=True
-)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
@@ -310,31 +169,13 @@ ALIAS = "CAMI.GABI.MACA"
 
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
+<p style="font-size:24px;">Si querés hacernos un regalo 💕</p>
+<p><b>CBU:</b> {CBU}</p>
+<p><b>Alias:</b> {ALIAS}</p>
+</div>
+""", unsafe_allow_html=True)
 
-<p style="font-size:24px;">
-Si querés hacernos un regalo 💕<br><br>
-Podés ayudarnos con nuestra luna de miel ✈️
-</p>
-
-<p style="font-size:22px;">
-<b>CBU:</b> {CBU}
-</p>
-
-<p style="font-size:22px;">
-<b>Alias:</b> {ALIAS}
-</p>
-
-<button onclick="navigator.clipboard.writeText('{CBU}')"
-style="
-    margin-top:15px;
-    background-color:#E8A0A0;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    font-size:18px;
-    border-radius:10px;
-    cursor:pointer;
-">
+# BOTON FUNCIONAL
 components.html(f"""
 <div style="text-align:center;">
 
@@ -370,67 +211,20 @@ function copiarCBU() {{
 </script>
 """, height=150)
 
-
-# --- PLAYLIST ---
-st.markdown("""
-<div class="center fade-in">
-    <p style="font-size:26px;">🎶 Agregá una canción a la fiesta</p>
-    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
-        <button class="button-premium">🎧 Agregar canción</button>
-    </a>
-</div>
-""", unsafe_allow_html=True)
-
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- RSVP ---
-st.markdown('<h2 class="fade-in">Confirmar asistencia</h2>', unsafe_allow_html=True)
+st.markdown('<h2>Confirmar asistencia</h2>', unsafe_allow_html=True)
 
 nombre = st.text_input("Nombre y apellido")
 asistencia = st.selectbox("¿Asistís?", ["Sí", "No"])
 
-col1, col2 = st.columns(2)
-with col1:
-    adultos = st.number_input("Adultos", min_value=0, step=1)
-with col2:
-    ninos = st.number_input("Niñes (Menores de 8 años)", min_value=0, step=1)
-
-restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
-coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
-
-data = sheet.get_all_records()
-df = pd.DataFrame(data)
-
-def ya_existe(nombre):
-    if df.empty:
-        return False
-    return nombre.lower().strip() in df["Nombre"].astype(str).str.lower().str.strip().values
-
 if st.button("Confirmar asistencia"):
-
-    if not nombre:
-        st.error("Por favor ingresá tu nombre")
-
-    elif ya_existe(nombre):
-        st.warning("⚠️ Este nombre ya confirmó asistencia")
-
+    if nombre:
+        sheet.append_row([nombre, asistencia])
+        st.success("Confirmado 💖")
     else:
-        sheet.append_row([
-            nombre,
-            asistencia,
-            adultos,
-            ninos,
-            datetime.now().strftime("%Y-%m-%d %H:%M"),
-            restriccion,
-            coche
-        ])
-
-        st.success("💖 ¡Gracias por confirmar! Te esperamos")
-
-st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+        st.error("Ingresá tu nombre")
 
 # --- FOOTER ---
-st.markdown(
-    '<p class="center" style="opacity:0.6;">Con amor, Flor & Lucas 💖</p>',
-    unsafe_allow_html=True
-)
+st.markdown('<p class="center">Con amor, Flor & Lucas 💖</p>', unsafe_allow_html=True)
