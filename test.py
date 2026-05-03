@@ -224,33 +224,39 @@ st.markdown('<h2 class="fade-in">Detalles del evento</h2>', unsafe_allow_html=Tr
 
 st.markdown("""
 <div class="card fade-in">
+
 <div style='text-align:center;'>
 
-<div style='font-size:28px; margin-bottom:10px;'>
+<div style='font-size:30px; margin-bottom:15px;'>
 👗 <b>Dress Code</b> 👗
 </div>
 
-<div style='font-size:26px; margin-bottom:15px;'>
+<div style='font-size:24px; margin-bottom:20px;'>
 Elegante 
 </div>
 
-<div style='color:#d16d6d; font-size:20px; font-style:italic;'>
-💗 <b>El único requisito: ¡un toque de rosa en tu look!</b>
+<div style='color:#d16d6d; font-size:22px;'>
+
+<span style="font-style:italic; font-size:24px;">
+<span style="color:#E8A0A0;">❤</span> 
+<b>"On Wednesdays we wear pink"</b>
+</span>
+
+<br><br>
+
+<span style="font-size:20px;">
+Y como nos casamos un 3 de octubre…<br>
+¡sumale un toque de rosa en tu look! 😉
+</span>
+
 </div>
 
 </div>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in">🕒 17:45 hs</p>', unsafe_allow_html=True)
-
-st.markdown(
-    '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
-    unsafe_allow_html=True
-)
-
-st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:28px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:24px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
@@ -302,18 +308,65 @@ function copiarCBU() {{
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
+# --- PLAYLIST ---
+st.markdown("""
+<div class="center fade-in">
+    <p style="font-size:26px;">🎶 Agregá una canción a la fiesta</p>
+    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
+        <button class="button-premium">🎧 Agregar canción</button>
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+
+
 # --- RSVP ---
 st.markdown('<h2>Confirmar asistencia</h2>', unsafe_allow_html=True)
 
 nombre = st.text_input("Nombre y apellido")
 asistencia = st.selectbox("¿Asistís?", ["Sí", "No"])
 
+col1, col2 = st.columns(2)
+with col1:
+    adultos = st.number_input("Adultos", min_value=0, step=1)
+with col2:
+    ninos = st.number_input("Niñes (Menores de 8 años)", min_value=0, step=1)
+
+restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
+coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
+
+data = sheet.get_all_records()
+df = pd.DataFrame(data)
+
+def ya_existe(nombre):
+    if df.empty:
+        return False
+    return nombre.lower().strip() in df["Nombre"].astype(str).str.lower().str.strip().values
+
 if st.button("Confirmar asistencia"):
-    if nombre:
-        sheet.append_row([nombre, asistencia])
-        st.success("Confirmado 💖")
+
+    if not nombre:
+        st.error("Por favor ingresá tu nombre")
+
+    elif ya_existe(nombre):
+        st.warning("⚠️ Este nombre ya confirmó asistencia")
+
     else:
-        st.error("Ingresá tu nombre")
+        sheet.append_row([
+            nombre,
+            asistencia,
+            adultos,
+            ninos,
+            datetime.now().strftime("%Y-%m-%d %H:%M"),
+            restriccion,
+            coche
+        ])
+
+        st.success("💖 ¡Gracias por confirmar! Te esperamos")
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+
+# --- FOOTER ---
+st.markdown('<p class="center" style="opacity:0.6;">Con amor, Flor & Lucas 💖</p>', unsafe_allow_html=True)
 
 # --- FOOTER ---
 st.markdown('<p class="center">Con amor, Flor & Lucas 💖</p>', unsafe_allow_html=True)
