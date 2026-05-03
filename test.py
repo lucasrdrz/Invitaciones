@@ -335,6 +335,8 @@ with col2:
 restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
 coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
 
+traslado = st.selectbox("¿Necesitarias traslado?", ["No", "Lanús", "Capital"])
+
 data = sheet.get_all_records()
 df = pd.DataFrame(data)
 
@@ -359,7 +361,8 @@ if st.button("Confirmar asistencia"):
             ninos,
             datetime.now().strftime("%Y-%m-%d %H:%M"),
             restriccion,
-            coche
+            coche,
+            traslado
         ])
 
         st.success("💖 ¡Gracias por confirmar! Te esperamos")
