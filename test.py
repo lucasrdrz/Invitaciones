@@ -264,7 +264,7 @@ ALIAS = "CAMI.GABI.MACA"
 
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
-<p style="font-size:24px;">Si querés hacernos un regalo 💕</p>
+<p style="font-size:32px;">Si querés hacernos un regalo 💕</p>
 <p><b>CBU:</b> {CBU}</p>
 <p><b>Alias:</b> {ALIAS}</p>
 </div>
@@ -311,7 +311,7 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 # --- PLAYLIST ---
 st.markdown("""
 <div class="center fade-in">
-    <p style="font-size:26px;">🎶 Agregá una canción a la fiesta</p>
+    <p style="font-size:32px;">🎶 Agregá una canción a la fiesta</p>
     <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
         <button class="button-premium">🎧 Agregar canción</button>
     </a>
