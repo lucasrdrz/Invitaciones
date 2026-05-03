@@ -235,16 +235,16 @@ st.markdown("""
 Elegante 
 </div>
 
-<div style='color:#d16d6d; font-size:22px;'>
+<div style='color:#d16d6d; font-size:32px;'>
 
-<span style="font-style:italic; font-size:24px;">
+<span style="font-style:italic; font-size:32px;">
 <span style="color:#E8A0A0;">❤</span> 
 <b>"On Wednesdays we wear pink"</b>
 </span>
 
 <br><br>
 
-<span style="font-size:20px;">
+<span style="font-size:32px;">
 Y como nos casamos un 3 de octubre…<br>
 ¡sumale un toque de rosa en tu look! 
 </span>
@@ -255,8 +255,8 @@ Y como nos casamos un 3 de octubre…<br>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in" style="font-size:28px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in" style="font-size:24px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
