@@ -321,21 +321,62 @@ st.markdown("""
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- RSVP ---
-st.markdown('<h2>Confirmar asistencia</h2>', unsafe_allow_html=True)
+st.markdown('<h2 class="fade-in">Confirmar asistencia</h2>', unsafe_allow_html=True)
 
-nombre = st.text_input("Nombre y apellido")
+# --- LISTA INVITADOS ---
+invitados = {
+    "CAMI": 0, "GONE": 0, "JOTA": 0, "AGUSTIN": 0, "JUANITA": 0,
+    "LEO": 0, "VICKY": 0, "MOMO": 0, "FEDE": 0,
+    "CECI": 1, "WADITA": 0, "GONZA": 0, "FRANKI": 1,
+    "SEBAS": 0, "ELI": 0, "LARITA": 0, "PABLITO": 0,
+    "SARA": 0, "CAMI A": 0, "DELFINA": 0, "GERMAN": 0,
+    "ND": 1, "ARIADNA": 0, "FLY": 0, "AYU": 0,
+    "MIRU": 0, "MANU": 1, "EUGE": 0, "JONY V": 0,
+    "FRAN K": 0, "CARO P": 0, "VICKY C": 0, "JONY M": 0,
+    "EVELYN": 0, "GABI": 0, "NESTOR": 0, "ABUELA": 0,
+    "ABUELO": 0, "NAHUEL": 0, "BRENDA": 0, "MONI": 0,
+    "NICO": 0, "ROMI": 0, "CELES": 0, "AGUS": 0,
+    "TIZIANA": 0, "WALTER": 1, "IVAN": 1, "EZEQUIEL": 0,
+    "CRISTIAN": 1, "ROLO": 1, "ZORI": 1, "ANDRES": 1,
+    "MAURO": 1, "ENRICO": 1
+}
+
+# --- INPUTS ---
+nombre = st.selectbox("Seleccioná tu nombre", sorted(invitados.keys()))
 asistencia = st.selectbox("¿Asistís?", ["Sí", "No"])
 
-col1, col2 = st.columns(2)
-with col1:
-    adultos = st.number_input("Adultos", min_value=0, step=1)
-with col2:
-    ninos = st.number_input("Niñes (Menores de 8 años)", min_value=0, step=1)
+# --- SOLO SI ASISTE ---
+if asistencia == "Sí":
 
-restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
+    permite_acompanante = invitados.get(nombre, 0)
 
-traslado = st.selectbox("¿Necesitarias traslado?", ["No", "Lanús", "Capital","Voy en Auto","Voy en Auto y puedo alcanzar a alguien"])
+    col1, col2 = st.columns(2)
 
+    with col1:
+        if permite_acompanante == 1:
+            adultos = st.number_input("Adultos", min_value=1, max_value=2, value=1)
+            st.markdown('<p style="color:#E8A0A0;">Podés venir con acompañante 💕</p>', unsafe_allow_html=True)
+        else:
+            adultos = 1
+            st.markdown('<p style="opacity:0.6;">Invitación individual</p>', unsafe_allow_html=True)
+
+    with col2:
+        ninos = st.number_input("Niñes (Menores de 8 años)", min_value=0, step=1)
+
+    restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
+
+    traslado = st.selectbox(
+        "🚗 ¿Necesitás traslado?",
+        ["No", "Lanús", "Capital", "Voy en Auto", "Puedo llevar gente"]
+    )
+
+else:
+    adultos = 0
+    ninos = 0
+    restriccion = ""
+    traslado = "No"
+
+# --- DATA ---
 data = sheet.get_all_records()
 df = pd.DataFrame(data)
 
@@ -344,10 +385,11 @@ def ya_existe(nombre):
         return False
     return nombre.lower().strip() in df["Nombre"].astype(str).str.lower().str.strip().values
 
+# --- BOTON ---
 if st.button("Confirmar asistencia"):
 
     if not nombre:
-        st.error("Por favor ingresá tu nombre")
+        st.error("Por favor seleccioná tu nombre")
 
     elif ya_existe(nombre):
         st.warning("⚠️ Este nombre ya confirmó asistencia")
@@ -364,6 +406,7 @@ if st.button("Confirmar asistencia"):
         ])
 
         st.success("💖 ¡Gracias por confirmar! Te esperamos")
+
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- FOOTER ---
