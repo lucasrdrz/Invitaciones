@@ -5,7 +5,7 @@ from google.oauth2.service_account import Credentials
 import pandas as pd
 import base64
 import time
-
+import streamlit.components.v1 as components
 # --- FUNCION IMAGEN ---
 def get_base64(file):
     with open(file, "rb") as f:
