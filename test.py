@@ -367,7 +367,7 @@ if asistencia == "Sí":
 
     traslado = st.selectbox(
         "🚗 ¿Necesitás traslado?",
-        ["No", "Lanús", "Capital", "Voy en Auto", "Puedo llevar gente"]
+        ["Voy en Auto", "Puedo llevar gente"]
     )
 
 else:
