@@ -141,27 +141,46 @@ st.markdown(f'<p class="center fade-in"><b>Faltan {dias} días 💕</b></p>', un
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- EVENTO ---
+# --- EVENTO ---
 st.markdown('<h2 class="fade-in">Detalles del evento</h2>', unsafe_allow_html=True)
 
 st.markdown("""
-<div class="card fade-in" style="text-align:center;">
+<div class="card fade-in">
 
-<div style='font-size:30px;'>👗 <b>Dress Code</b></div>
-<div style='font-size:24px;'>Elegante</div>
+    <div style='text-align:center;'>
 
-<br>
+        <div style='font-size:28px; margin-bottom:10px;'>
+            👗 <b>Dress Code</b> 👗
+        </div>
 
-<div style='font-size:20px;'>
-Sumale un toque de rosa 😉
-</div>
+        <div style='font-size:26px; margin-bottom:15px;'>
+            Elegante
+        </div>
+
+        <div style='
+            text-align:center;
+            color:#d16d6d;
+            font-size:22px;
+        '>
+
+            <span style="font-style:italic;">
+                <span style="color:#E8A0A0;">❤</span>
+                <b>"On Wednesdays we wear pink"</b>
+            </span>
+
+            <br><br>
+
+            <span style="font-style:normal;">
+                Y como nos casamos un 3 de octubre…<br>
+                ¡sumale un toque de rosa en tu look!
+            </span>
+
+        </div>
+
+    </div>
 
 </div>
 """, unsafe_allow_html=True)
-
-st.markdown('<p class="center fade-in" style="font-size:28px;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in" style="font-size:24px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
-
-st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
