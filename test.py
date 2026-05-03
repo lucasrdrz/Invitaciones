@@ -200,7 +200,7 @@ st.markdown(petals_html, unsafe_allow_html=True)
 # --- PORTADA ---
 st.markdown('<h1 class="title">Flor & Lucas</h1>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in" style="font-size:32px;">¡Nos casamos! 💍</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in">03 de Octubre 2026</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:20px;">03 de Octubre 2026</p>', unsafe_allow_html=True)
 
 # --- CONTADOR ---
 fecha_evento = datetime(2026, 10, 3)
