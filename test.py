@@ -366,8 +366,8 @@ if asistencia == "Sí":
     restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
 
     traslado = st.selectbox(
-        "🚗 ¿Necesitás traslado?",
-        ["Voy en Auto", "Puedo llevar gente"]
+        "🚗 ¿Venis con Auto??",
+        ["No","Voy en Auto", "Tengo lugar para llevar a alguien"]
     )
 
 else:
