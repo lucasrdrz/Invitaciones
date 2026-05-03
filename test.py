@@ -263,7 +263,7 @@ CBU = "0720176588000026340436"
 ALIAS = "CAMI.GABI.MACA"
 
 st.markdown(f"""
-<div class="card fade-in "style="font-size:32px" style="text-align:center;">
+<div class="card fade-in style="text-align:center;">
 <p style="font-size:32px;">Si querés hacernos un regalo 💕</p>
 <p><b>CBU:</b> {CBU}</p>
 <p><b>Alias:</b> {ALIAS}</p>
