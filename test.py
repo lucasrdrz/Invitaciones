@@ -255,15 +255,15 @@ Y como nos casamos un 3 de octubre…<br>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in" style="font-size:32px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in" style="font-size:32px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px"; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px";">🕒 17:45 hs</p>', unsafe_allow_html=True)
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
 ALIAS = "CAMI.GABI.MACA"
 
 st.markdown(f"""
-<div class="card fade-in" style="text-align:center;">
+<div class="card fade-in "style="font-size:32px" style="text-align:center;">
 <p style="font-size:32px;">Si querés hacernos un regalo 💕</p>
 <p><b>CBU:</b> {CBU}</p>
 <p><b>Alias:</b> {ALIAS}</p>
