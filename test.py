@@ -333,9 +333,8 @@ with col2:
     ninos = st.number_input("Niñes (Menores de 8 años)", min_value=0, step=1)
 
 restriccion = st.text_input("¿Restricción alimentaria? (opcional)")
-coche = st.selectbox("¿Venís en auto?", ["Sí", "No"])
 
-traslado = st.selectbox("¿Necesitarias traslado?", ["No", "Lanús", "Capital","Voy en Auto","Voy en Auto, puedo alcanzar a alguien"])
+traslado = st.selectbox("¿Necesitarias traslado?", ["No", "Lanús", "Capital","Voy en Auto","Voy en Auto y puedo alcanzar a alguien"])
 
 data = sheet.get_all_records()
 df = pd.DataFrame(data)
@@ -361,7 +360,6 @@ if st.button("Confirmar asistencia"):
             ninos,
             datetime.now().strftime("%Y-%m-%d %H:%M"),
             restriccion,
-            coche,
             traslado
         ])
 
