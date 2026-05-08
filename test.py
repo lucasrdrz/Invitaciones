@@ -260,7 +260,7 @@ st.markdown('<p class="center fade-in" style="font-size:32px";">🕒 17:45 hs</p
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
-ALIAS = "CAMI.GABI.MACA"
+ALIAS = "flora.lucas.boda"
 
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
