@@ -255,6 +255,10 @@ Y como nos casamos un 3 de octubre…<br>
 
 st.markdown('<p class="center fade-in" style="font-size:32px"; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
 st.markdown('<p class="center fade-in" style="font-size:32px";">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown(
+    '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
+    unsafe_allow_html=True
+)
 
 # --- REGALO ---
 CBU = "0720176588000026340436"
