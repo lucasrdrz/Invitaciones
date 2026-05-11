@@ -324,7 +324,7 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="center fade-in">
     <p style="font-size:32px;">🎶 Agregá una canción a la fiesta</p>
-    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=QRyJxei3lhU_dmo4Zvdnbw" target="_blank">
+    <a href="https://music.youtube.com/playlist?list=PLmptaA43xE8G1tBG9apqVDBuNOFJu_3DA&jct=s1h1bcXOXlyHTBJlfidXjQ" target="_blank">
         <button class="button-premium">🎧 Agregar canción</button>
     </a>
 </div>
