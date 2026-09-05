@@ -439,7 +439,7 @@ st.markdown(f"""
         📸 Compartí los recuerdos que saques durante el evento escaneando este QR
     </p>
     <p style="font-size:18px; color: #777;">
-        #Compartí los recuerdos que saques durante el evento
+        
     </p>
     {qr_html}
 </div>
