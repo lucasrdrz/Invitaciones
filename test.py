@@ -425,9 +425,10 @@ if st.button("Confirmar asistencia"):
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 # --- SECCION SUBIR FOTOS (QR) ---
+# --- SECCION SUBIR FOTOS (QR) ---
 try:
     # Nombre del archivo de tu imagen QR en tu proyecto
-    img_qr = get_base64("qr drive transparente.png")
+    img_qr = get_base64("qr_fotos.png")
     qr_html = f'<img src="data:image/png;base64,{img_qr}" style="width: 200px; max-width: 80%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 15px;" />'
 except Exception:
     # Mensaje temporal en caso de que aún no hayas guardado la imagen en la carpeta
@@ -435,15 +436,11 @@ except Exception:
 
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
-    <p style="font-size:30px; font-weight:600; margin-bottom: 10px;">
-        📸 Subí tus fotos escaneando este QR
-    </p>
-    <p style="font-size:18px; color: #777;">
-        
+    <p style="font-size:28px; font-weight:600; margin-bottom: 15px;">
+        📸 Compartí los recuerdos que saques durante el evento escaneando este QR
     </p>
     {qr_html}
 </div>
-""", unsafe_allow_html=True)
 """, unsafe_allow_html=True)
 
 
