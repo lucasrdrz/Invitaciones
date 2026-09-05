@@ -6,6 +6,7 @@ import pandas as pd
 import base64
 import time
 import streamlit.components.v1 as components
+
 # --- FUNCION IMAGEN ---
 def get_base64(file):
     with open(file, "rb") as f:
@@ -206,7 +207,7 @@ st.markdown('<p class="center fade-in" style="font-size:32px;">03 de Octubre 202
 fecha_evento = datetime(2026, 10, 3)
 dias = (fecha_evento - datetime.now()).days
 
-st.markdown(f'<p class="center fade-in"style="font-size:32px"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
+st.markdown(f'<p class="center fade-in" style="font-size:32px"><b>Faltan {dias} días 💕</b></p>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
@@ -253,8 +254,8 @@ Y como nos casamos un 3 de octubre…<br>
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="center fade-in" style="font-size:32px"; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
-st.markdown('<p class="center fade-in" style="font-size:32px";">🕒 17:45 hs</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px; font-weight:600;">📍 Los Cipreses 2</p>', unsafe_allow_html=True)
+st.markdown('<p class="center fade-in" style="font-size:32px;">🕒 17:45 hs</p>', unsafe_allow_html=True)
 st.markdown(
     '<p class="center fade-in"><a href="https://maps.app.goo.gl/3oauB4HkXW6wqN7U7" target="_blank">📍 Ver ubicación</a></p>',
     unsafe_allow_html=True
@@ -282,6 +283,7 @@ Podés ayudarnos con nuestra luna de miel ✈️
 
 </div>
 """, unsafe_allow_html=True)
+
 # BOTON FUNCIONAL
 components.html(f"""
 <div style="text-align:center;">
@@ -419,6 +421,29 @@ if st.button("Confirmar asistencia"):
         ])
 
         st.success("💖 ¡Gracias por confirmar! Te esperamos")
+
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+
+# --- SECCION SUBIR FOTOS (QR) ---
+try:
+    # Nombre del archivo de tu imagen QR en tu proyecto
+    img_qr = get_base64("qr drive transparente.png")
+    qr_html = f'<img src="data:image/png;base64,{img_qr}" style="width: 200px; max-width: 80%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 15px;" />'
+except Exception:
+    # Mensaje temporal en caso de que aún no hayas guardado la imagen en la carpeta
+    qr_html = '<div style="border: 2px dashed #E8A0A0; padding: 20px; border-radius: 15px; display: inline-block; margin-top: 15px; color: #888;">[ Agregá tu archivo "qr_fotos.png" en la carpeta ]</div>'
+
+st.markdown(f"""
+<div class="card fade-in" style="text-align:center;">
+    <p style="font-size:30px; font-weight:600; margin-bottom: 10px;">
+        📸 Subí tus fotos escaneando este QR
+    </p>
+    <p style="font-size:18px; color: #777;">
+        Compartí los recuerdos que saques durante el evento
+    </p>
+    {qr_html}
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
