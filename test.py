@@ -428,7 +428,7 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 # --- SECCION SUBIR FOTOS (QR) ---
 try:
     # Nombre del archivo de tu imagen QR en tu proyecto
-    img_qr = get_base64("qr_fotos.png")
+    img_qr = get_base64("qr drive transparente.png")
     qr_html = f'<img src="data:image/png;base64,{img_qr}" style="width: 200px; max-width: 80%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 15px;" />'
 except Exception:
     # Mensaje temporal en caso de que aún no hayas guardado la imagen en la carpeta
