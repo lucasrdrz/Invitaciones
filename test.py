@@ -436,10 +436,10 @@ except Exception:
 st.markdown(f"""
 <div class="card fade-in" style="text-align:center;">
     <p style="font-size:30px; font-weight:600; margin-bottom: 10px;">
-        📸 Subí tus fotos escaneando este QR
+        📸 Compartí los recuerdos que saques durante el evento escaneando este QR
     </p>
     <p style="font-size:18px; color: #777;">
-        Compartí los recuerdos que saques durante el evento
+        #Compartí los recuerdos que saques durante el evento
     </p>
     {qr_html}
 </div>
